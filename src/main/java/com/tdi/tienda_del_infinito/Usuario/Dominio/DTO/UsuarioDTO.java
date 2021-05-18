@@ -1,14 +1,10 @@
 package com.tdi.tienda_del_infinito.Usuario.Dominio.DTO;
 
-import com.tdi.tienda_del_infinito.Producto.Dominio.ProductoVO;
 import com.tdi.tienda_del_infinito.Shared.Aplicacion.Dto;
 import lombok.*;
 
-import javax.persistence.*;
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 /**
  * Clase UsuarioDTO

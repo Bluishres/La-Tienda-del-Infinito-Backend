@@ -5,7 +5,7 @@ import com.tdi.tienda_del_infinito.Shared.Err.EntityNotExist;
 import com.tdi.tienda_del_infinito.Usuario.Dominio.DTO.UsuarioDTO;
 import com.tdi.tienda_del_infinito.Usuario.Dominio.Mapper.UsuarioMapper;
 import com.tdi.tienda_del_infinito.Usuario.Dominio.Repository.UsuarioRepository;
-import com.tdi.tienda_del_infinito.Usuario.Dominio.UsuarioVO;
+import com.tdi.tienda_del_infinito.Usuario.Dominio.VO.UsuarioVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

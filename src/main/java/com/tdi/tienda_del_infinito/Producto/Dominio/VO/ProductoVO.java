@@ -1,0 +1,66 @@
+package com.tdi.tienda_del_infinito.Producto.Dominio.VO;
+
+import com.tdi.tienda_del_infinito.Shared.Dominio.Audit.AuditableEntity;
+import lombok.*;
+
+import javax.persistence.*;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+/**
+ * Clase ProductoVO para trabajar con la base de datos
+ */
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+@With
+@EqualsAndHashCode
+@Entity(name = "producto")
+public class ProductoVO extends AuditableEntity implements Serializable {
+
+    /**
+     * id tipo int el cual es el Id en la base de datos
+     */
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int Id;
+
+    /**
+     * nombre tipo String
+     */
+    @Column(length = 500)
+    private String Nombre;
+
+    /**
+     * precio tipo String
+     */
+    @Column(length = 500)
+    private String Precio;
+
+    /**
+     * stock tipo Integer
+     */
+    @Column(length = 500)
+    private int Stock_disponible;
+
+    /**
+     * fecha tipo Date
+     */
+    @Column(length = 500)
+    private Date Fecha_creacion;
+
+    @OneToMany(mappedBy = "Producto", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    private List<FavoritosVO> lista_usuarios_deseados = new ArrayList<>();
+
+    @OneToMany(mappedBy = "Producto", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    private List<FavoritosVO> tickets = new ArrayList<>();
+
+    /**
+     * descripcion tipo String
+     */
+    @Column(length = 500)
+    private String descripcion;
+}

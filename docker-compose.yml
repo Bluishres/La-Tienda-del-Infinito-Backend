@@ -1,0 +1,36 @@
+version: "3.8"
+services:
+  mongodb:
+    image: mongo
+    container_name: mongodb-team3
+    environment:
+      - PUID=1000
+      - PGID=1000
+    volumes:
+      - ./res/db/mongo/db:/data/db
+    ports:
+      - 27017:27017
+    restart: unless-stopped
+
+  mysqldb:
+    image: mysql:5.7
+    container_name: Mysql5
+    command:
+      - --character-set-server=utf8
+      - --collation-server=utf8_unicode_ci
+      - --skip-character-set-client-handshake
+      #- --lower_case_table_names=0
+    restart: always
+    environment:
+      MYSQL_DATABASE: "tiendadinfinito"
+      MYSQL_USER: "tdi"
+      MYSQL_PASSWORD: "tdi"
+      MYSQL_ROOT_PASSWORD: "root"
+
+    ports:
+      - 3311:3306
+    expose:
+      - 3306
+    volumes:
+      - ./res/db/mysql/db:/var/lib/mysql
+

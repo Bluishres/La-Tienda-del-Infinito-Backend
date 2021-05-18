@@ -16,7 +16,7 @@ import java.util.List;
  * Clase controlador de Usuario para la Api Rest
  */
 @RestController
-@RequestMapping(EndpointUrls.V1 + UsuarioRestController.USER_RESOURCE)
+@RequestMapping(EndpointUrls.Base + UsuarioRestController.USER_RESOURCE)
 @AllArgsConstructor
 public class UsuarioRestController {
 

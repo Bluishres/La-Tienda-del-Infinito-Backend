@@ -1,7 +1,7 @@
 package com.tdi.tienda_del_infinito.Usuario.Dominio.Mapper;
 
 import com.tdi.tienda_del_infinito.Usuario.Dominio.DTO.UsuarioDTO;
-import com.tdi.tienda_del_infinito.Usuario.Dominio.UsuarioVO;
+import com.tdi.tienda_del_infinito.Usuario.Dominio.VO.UsuarioVO;
 
 public class UsuarioMapper {
 

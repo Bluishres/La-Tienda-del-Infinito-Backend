@@ -5,7 +5,6 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -52,11 +51,11 @@ public class ProductoVO extends AuditableEntity implements Serializable {
     @Column(length = 500)
     private Date Fecha_creacion;
 
-    @OneToMany(mappedBy = "Producto", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
-    private List<FavoritosVO> lista_usuarios_deseados = new ArrayList<>();
+    @OneToMany(mappedBy = "producto", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    private List<FavoritosVO> lista_usuarios_deseados;
 
-    @OneToMany(mappedBy = "Producto", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
-    private List<FavoritosVO> tickets = new ArrayList<>();
+    @OneToMany(mappedBy = "producto", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    private List<TicketVO> tickets;
 
     /**
      * descripcion tipo String

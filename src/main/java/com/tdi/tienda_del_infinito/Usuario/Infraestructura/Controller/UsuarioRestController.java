@@ -20,10 +20,9 @@ import java.util.List;
 @AllArgsConstructor
 public class UsuarioRestController {
 
+    public static final String USER_RESOURCE = "/user";
     @Autowired
     private final UsuarioService userService;
-
-    public static final String USER_RESOURCE = "/user";
 
     /**
      * Método que registra un usuario

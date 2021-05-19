@@ -7,6 +7,7 @@ public class UsuarioMapper {
 
     /**
      * Conversor de UsuarioVO a UsuarioDTO
+     *
      * @param vo
      * @return
      */
@@ -27,6 +28,7 @@ public class UsuarioMapper {
 
     /**
      * Conversor de UsuarioDTO a UsuarioVO
+     *
      * @param dto
      * @return
      */

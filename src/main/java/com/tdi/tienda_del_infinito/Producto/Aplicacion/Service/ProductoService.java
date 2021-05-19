@@ -2,8 +2,8 @@ package com.tdi.tienda_del_infinito.Producto.Aplicacion.Service;
 
 import com.tdi.tienda_del_infinito.Producto.Dominio.DTO.ProductoDTO;
 import com.tdi.tienda_del_infinito.Producto.Dominio.Mapper.ProductoMapper;
-import com.tdi.tienda_del_infinito.Producto.Dominio.VO.ProductoVO;
 import com.tdi.tienda_del_infinito.Producto.Dominio.Repository.ProductoRepository;
+import com.tdi.tienda_del_infinito.Producto.Dominio.VO.ProductoVO;
 import com.tdi.tienda_del_infinito.Shared.Err.EntityExist;
 import com.tdi.tienda_del_infinito.Shared.Err.EntityNotExist;
 import com.tdi.tienda_del_infinito.Usuario.Dominio.VO.UsuarioVO;
@@ -25,7 +25,7 @@ public class ProductoService {
      * productoRepo tipo productoRepository
      */
     @Autowired
-    ProductoRepository productoRepo;
+    private ProductoRepository productoRepo;
 
     /**
      * Método para dar de alta un nuevo producto. Tambien se convierte un productodto a ProductoVO
@@ -103,5 +103,5 @@ public class ProductoService {
         productoRepo.deleteById(id);
         return true;
     }
-    
+
 }

@@ -9,7 +9,8 @@ import com.tdi.tienda_del_infinito.Producto.Dominio.VO.ProductoVO;
 public class ProductoMapper {
 
     /**
-     * Conversor de EventoVO a EventoDTO
+     * Conversor de ProductoVO a ProductoDTO
+     *
      * @param vo
      * @return
      */
@@ -24,7 +25,8 @@ public class ProductoMapper {
     }
 
     /**
-     * Conversor de EventoDTO a EventoVO
+     * Conversor de ProductoDTO a ProductoVO
+     *
      * @param dto
      * @return
      */

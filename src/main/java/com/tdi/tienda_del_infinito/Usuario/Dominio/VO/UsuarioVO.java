@@ -1,7 +1,8 @@
 package com.tdi.tienda_del_infinito.Usuario.Dominio.VO;
 
+import com.tdi.tienda_del_infinito.Hilo.Dominio.VO.HiloVO;
+import com.tdi.tienda_del_infinito.Hilo.Dominio.VO.MensajeVO;
 import com.tdi.tienda_del_infinito.Producto.Dominio.VO.FavoritosVO;
-import com.tdi.tienda_del_infinito.Producto.Dominio.VO.ProductoVO;
 import com.tdi.tienda_del_infinito.Producto.Dominio.VO.TicketVO;
 import com.tdi.tienda_del_infinito.Shared.Dominio.Audit.AuditableEntity;
 import lombok.*;
@@ -92,15 +93,17 @@ public class UsuarioVO extends AuditableEntity implements Serializable {
     @Column(length = 150, nullable = false)
     private String Foto_Perfil;
 
-/*    @OneToMany(mappedBy = "Creador", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
-    private List<HiloVO> hilos = new ArrayList<>();*/
+    @OneToMany(mappedBy = "creador", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    private List<HiloVO> hilos = new ArrayList<>();
 
-    @OneToMany(mappedBy = "Usuario", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "autor", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    private List<MensajeVO> mensajes = new ArrayList<>();
+
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<FavoritosVO> lista_deseados = new ArrayList<>();
 
-    @OneToMany(mappedBy = "Usuario", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<TicketVO> tickets = new ArrayList<>();
-
 
 
 }

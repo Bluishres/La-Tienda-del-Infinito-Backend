@@ -26,12 +26,12 @@ public class FavoritosVO extends AuditableEntity implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int Id;
 
-/**
- * usuario tipo usuariovo
- */
+    /**
+     * usuario tipo usuariovo
+     */
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "usuario_id")
-    private UsuarioVO Usuario;
+    private UsuarioVO usuario;
 
 
     /**
@@ -39,6 +39,6 @@ public class FavoritosVO extends AuditableEntity implements Serializable {
      */
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "producto_id")
-    private ProductoVO Producto;
+    private ProductoVO producto;
 
 }

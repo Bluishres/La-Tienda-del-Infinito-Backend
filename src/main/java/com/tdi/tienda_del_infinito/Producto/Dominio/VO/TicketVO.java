@@ -50,7 +50,7 @@ public class TicketVO extends AuditableEntity implements Serializable {
      */
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "usuario_id")
-    private UsuarioVO Usuario;
+    private UsuarioVO usuario;
 
 
     /**
@@ -58,7 +58,6 @@ public class TicketVO extends AuditableEntity implements Serializable {
      */
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "producto_id")
-    private ProductoVO Producto;
-
+    private ProductoVO producto;
 
 }

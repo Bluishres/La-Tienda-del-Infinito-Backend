@@ -1,10 +1,8 @@
 package com.tdi.tienda_del_infinito.Producto.Dominio.DTO;
 
-import com.tdi.tienda_del_infinito.Producto.Dominio.VO.ProductoVO;
-import com.tdi.tienda_del_infinito.Usuario.Dominio.VO.UsuarioVO;
+import com.tdi.tienda_del_infinito.Usuario.Dominio.DTO.UsuarioDTO;
 import lombok.*;
 
-import javax.persistence.*;
 import java.util.Date;
 
 /**
@@ -40,11 +38,19 @@ public class TicketDTO {
     /**
      * usuario tipo usuariovo
      */
-    private UsuarioVO Usuario;
+    private UsuarioDTO Usuario;
 
 
     /**
      * producto tipo productovo
      */
-    private ProductoVO Producto;
+    private ProductoDTO Producto;
+
+    public TicketDTO(Date fecha, Double importe, int unidades, UsuarioDTO usuario, ProductoDTO producto) {
+        Fecha = fecha;
+        Importe = importe;
+        Unidades = unidades;
+        Usuario = usuario;
+        Producto = producto;
+    }
 }

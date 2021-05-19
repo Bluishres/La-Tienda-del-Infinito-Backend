@@ -24,7 +24,7 @@ public class UsuarioService {
      * usuarioRepo tipo UsuarioRepository
      */
     @Autowired
-    UsuarioRepository usuarioRepo;
+    private UsuarioRepository usuarioRepo;
 
     /**
      * Método para dar de alta un nuevo usuario. Tambien se convierte un UsuarioDTO a UsuarioVO
@@ -65,6 +65,7 @@ public class UsuarioService {
      * @param id
      * @return usuarioRepo.findOne(id)
      */
+    @Transactional
     public Optional<UsuarioVO> ConsultarPerfilUsuario(int id) {
         Optional<UsuarioVO> nbd = usuarioRepo.findById(id);
         if (!nbd.isPresent()) {

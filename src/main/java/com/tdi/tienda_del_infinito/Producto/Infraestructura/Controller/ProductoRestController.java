@@ -16,14 +16,13 @@ import java.util.List;
  * Clase controlador de Producto para la Api Rest
  */
 @RestController
-@RequestMapping(EndpointUrls.Base + com.tdi.tienda_del_infinito.Producto.Infraestructura.Controller.ProductoRestController.Product_RESOURCE)
+@RequestMapping(EndpointUrls.Base + ProductoRestController.Product_RESOURCE)
 @AllArgsConstructor
 public class ProductoRestController {
 
+    public static final String Product_RESOURCE = "/product";
     @Autowired
     private final ProductoService productService;
-
-    public static final String Product_RESOURCE = "/product";
 
     /**
      * Método que registra un producto

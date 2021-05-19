@@ -2,8 +2,9 @@ package com.tdi.tienda_del_infinito.Producto.Dominio.DTO;
 
 import lombok.*;
 
-import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Clase ProductoDTO
@@ -41,10 +42,15 @@ public class ProductoDTO {
      */
     private Date Fecha_creacion;
 
-    /*    *//**
-     * idusuario tipo int
-     *//*
-    private UsuarioVO id_usuarios;*/
+    /**
+     * lista_usuarios_deseados tipo List
+     */
+    private List<FavoritosDTO> lista_usuarios_deseados = new ArrayList<>();
+
+    /**
+     * lista_usuarios_deseados tipo List
+     */
+    private List<TicketDTO> tickets = new ArrayList<>();
 
     /**
      * descripcion tipo String

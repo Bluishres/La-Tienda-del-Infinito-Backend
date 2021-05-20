@@ -1,0 +1,35 @@
+# test/resources/fixtures/publishing.yml
+
+ProductoVO: &producto
+  id: ${faker.number.numberBetween(2,1000)}
+  Nombre: ${faker.name.fullName}
+  Precio: ${faker.number.digit}
+  Stock_disponible: ${faker.number.randomDigit}
+  Fecha_creacion: ${faker.date.between('2000-01-01', '2022-01-01')}
+  descripcion: ${faker.lorem.paragraph}
+
+UsuarioVO: &usuario
+  Id: ${faker.number.numberBetween(2,1000)}
+  Nick: ${faker.name.username}
+  Nombre: ${faker.name.firstName}
+  Apellidos: ${faker.name.lastName}
+  Password: ${faker.internet.password}
+  Email: ${faker.internet.emailAddress}
+  Nacionalidad: ${faker.team.state}
+  Fecha_Nacimiento: ${faker.date.between('2000-01-01', '2022-01-01')}
+  Direccion: ${faker.address.fullAddress}
+  Foto_Perfil: ${faker.internet.image}
+
+TicketVO: &ticket
+  Fecha: ${faker.date.between('2000-01-01', '2022-01-01')}
+  Importe: ${faker.number.randomDouble(7, 0, 100000)}
+  Unidades: ${faker.number.numberBetween(1,1000)}
+
+HiloVO: &hilo
+  titulo: ${faker.name.fullName}
+  Fecha_creacion: ${faker.date.between('2000-01-01', '2022-01-01')}
+
+MensajeVO: &mensaje
+  mensaje: ${faker.lorem.paragraph}
+  Fecha_creacion: ${faker.date.between('2000-01-01', '2022-01-01')}
+

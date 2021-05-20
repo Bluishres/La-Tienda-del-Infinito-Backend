@@ -15,7 +15,6 @@
                       value="jdbc:mysql://localhost:3311/tiendadinfinito?useUnicode=true&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC"/>
             <property name="javax.persistence.schema-generation.database.action"
                       value="update"/>
-            <property name="javax.persistence.sql-load-script-source" value="META-INF/data.sql"/>
         </properties>
 
     </persistence-unit>
@@ -31,9 +30,20 @@
                       value="jdbc:mysql://dbtdi.cqwnlzn5xbqb.eu-west-3.rds.amazonaws.com:3306/latiendadelinfinito"/>
             <property name="javax.persistence.schema-generation.database.action"
                       value="update"/>
-            <property name="javax.persistence.sql-load-script-source" value="META-INF/data.sql"/>
         </properties>
 
+    </persistence-unit>
+
+    <persistence-unit name="TEST">
+        <properties>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:h2:mem:tdi;"/>
+            <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
+
+            <property name="javax.persistence.schema-generation.database.action"
+                      value="drop-and-create"/>
+        </properties>
     </persistence-unit>
 
 

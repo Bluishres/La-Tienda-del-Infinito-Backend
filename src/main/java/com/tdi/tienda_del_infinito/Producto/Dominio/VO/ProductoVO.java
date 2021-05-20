@@ -62,4 +62,12 @@ public class ProductoVO extends AuditableEntity implements Serializable {
      */
     @Column(length = 500)
     private String descripcion;
+
+    public ProductoVO(String nombre, String precio, int stock_disponible, Date fecha_creacion, String descripcion) {
+        Nombre = nombre;
+        Precio = precio;
+        Stock_disponible = stock_disponible;
+        Fecha_creacion = fecha_creacion;
+        this.descripcion = descripcion;
+    }
 }

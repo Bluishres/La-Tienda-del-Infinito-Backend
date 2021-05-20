@@ -78,7 +78,7 @@ public class UsuarioVO extends AuditableEntity implements Serializable {
     /**
      * direccion tipo String
      */
-    @Column(length = 50, nullable = false)
+    @Column(nullable = false)
     private String Direccion;
 
     /**
@@ -105,5 +105,16 @@ public class UsuarioVO extends AuditableEntity implements Serializable {
     @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<TicketVO> tickets = new ArrayList<>();
 
-
+    public UsuarioVO(String nick, String password, String email, String nombre, String apellidos, String nacionalidad, Date fecha_Nacimiento, String direccion, boolean isAdmin, String foto_Perfil) {
+        Nick = nick;
+        Password = password;
+        Email = email;
+        Nombre = nombre;
+        Apellidos = apellidos;
+        Nacionalidad = nacionalidad;
+        Fecha_Nacimiento = fecha_Nacimiento;
+        Direccion = direccion;
+        this.isAdmin = isAdmin;
+        Foto_Perfil = foto_Perfil;
+    }
 }

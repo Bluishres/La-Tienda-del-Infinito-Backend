@@ -60,4 +60,9 @@ public class TicketVO extends AuditableEntity implements Serializable {
     @JoinColumn(name = "producto_id")
     private ProductoVO producto;
 
+    public TicketVO(Date fecha, Double importe, int unidades) {
+        Fecha = fecha;
+        Importe = importe;
+        Unidades = unidades;
+    }
 }

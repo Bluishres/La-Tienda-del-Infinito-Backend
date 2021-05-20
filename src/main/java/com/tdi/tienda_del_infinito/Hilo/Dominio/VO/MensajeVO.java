@@ -53,4 +53,8 @@ public class MensajeVO {
     @JoinColumn(name = "hilo_id")
     private HiloVO hilo;
 
+    public MensajeVO(Date fecha_creacion, String mensaje) {
+        this.fecha_creacion = fecha_creacion;
+        this.mensaje = mensaje;
+    }
 }

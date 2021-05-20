@@ -57,5 +57,8 @@ public class HiloVO extends AuditableEntity implements Serializable {
     @OneToMany(mappedBy = "hilo", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<MensajeVO> lista_mensajes = new ArrayList<>();
 
-
+    public HiloVO(String titulo, Date fecha_creacion) {
+        this.titulo = titulo;
+        this.fecha_creacion = fecha_creacion;
+    }
 }

@@ -1,10 +1,23 @@
 package com.tdi.tienda_del_infinito.Usuario.Dominio.DTO;
 
+import com.tdi.tienda_del_infinito.Hilo.Dominio.DTO.HiloDTO;
+import com.tdi.tienda_del_infinito.Hilo.Dominio.DTO.MensajeDTO;
+import com.tdi.tienda_del_infinito.Hilo.Dominio.VO.HiloVO;
+import com.tdi.tienda_del_infinito.Hilo.Dominio.VO.MensajeVO;
+import com.tdi.tienda_del_infinito.Producto.Dominio.DTO.FavoritosDTO;
+import com.tdi.tienda_del_infinito.Producto.Dominio.DTO.TicketDTO;
+import com.tdi.tienda_del_infinito.Producto.Dominio.VO.FavoritosVO;
+import com.tdi.tienda_del_infinito.Producto.Dominio.VO.TicketVO;
 import com.tdi.tienda_del_infinito.Shared.Aplicacion.Dto;
 import lombok.*;
 
+import javax.persistence.CascadeType;
+import javax.persistence.FetchType;
+import javax.persistence.OneToMany;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Clase UsuarioDTO
@@ -71,11 +84,12 @@ public class UsuarioDTO implements Dto, Serializable {
      */
     private String Foto_Perfil;
 
-/*    @OneToMany(mappedBy = "Creador", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
-    private List<HiloVO> hilos = new ArrayList<>();
+    private List<HiloDTO> hilos = new ArrayList<>();
 
-    private List<ProductoVO> lista_deseados = new ArrayList<>();
+    private List<MensajeDTO> mensajes = new ArrayList<>();
 
-    private List<ProductoDTO> Historial_Compra = new ArrayList<>();*/
+    private List<FavoritosDTO> lista_deseados = new ArrayList<>();
+
+    private List<TicketDTO> tickets = new ArrayList<>();
 
 }

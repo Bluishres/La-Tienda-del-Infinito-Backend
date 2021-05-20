@@ -41,4 +41,8 @@ public class FavoritosVO extends AuditableEntity implements Serializable {
     @JoinColumn(name = "producto_id")
     private ProductoVO producto;
 
+    public FavoritosVO(UsuarioVO usuario, ProductoVO producto) {
+        this.usuario = usuario;
+        this.producto = producto;
+    }
 }

@@ -6,13 +6,11 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.With;
 
-import java.util.Date;
-
 @AllArgsConstructor
 @NoArgsConstructor
 @With
 public class MensajeVOBuilder {
-    private Date Fecha_creacion;
+    private String Fecha_creacion;
     private String mensaje;
 
     public MensajeVO build() {

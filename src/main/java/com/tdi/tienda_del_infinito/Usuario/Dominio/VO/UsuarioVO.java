@@ -10,7 +10,6 @@ import lombok.*;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -69,11 +68,10 @@ public class UsuarioVO extends AuditableEntity implements Serializable {
     private String Nacionalidad;
 
     /**
-     * fecha_nacimiento tipo Date
+     * fecha_nacimiento tipo String
      */
     @Column
-    @Temporal(value = TemporalType.DATE)
-    private Date Fecha_Nacimiento;
+    private String Fecha_Nacimiento;
 
     /**
      * direccion tipo String
@@ -105,7 +103,7 @@ public class UsuarioVO extends AuditableEntity implements Serializable {
     @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<TicketVO> tickets = new ArrayList<>();
 
-    public UsuarioVO(String nick, String password, String email, String nombre, String apellidos, String nacionalidad, Date fecha_Nacimiento, String direccion, boolean isAdmin, String foto_Perfil) {
+    public UsuarioVO(String nick, String password, String email, String nombre, String apellidos, String nacionalidad, String fecha_Nacimiento, String direccion, boolean isAdmin, String foto_Perfil) {
         Nick = nick;
         Password = password;
         Email = email;

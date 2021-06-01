@@ -17,7 +17,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.transaction.Transactional;
-import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -42,7 +41,7 @@ public class HiloRestController {
 
     @Transactional
     @RequestMapping(value = "/hilo", method = POST)
-    public ResponseEntity<HiloDTO> crearHilo(@RequestParam int Id_Creador, @RequestParam String Titulo, @RequestParam Date Fecha, @RequestBody String mensaje) {
+    public ResponseEntity<HiloDTO> crearHilo(@RequestParam int Id_Creador, @RequestParam String Titulo, @RequestParam String Fecha, @RequestBody String mensaje) {
         Optional<UsuarioVO> uservo = userService.ConsultarPerfilUsuario(Id_Creador);
         if (uservo != null) {
             HiloDTO dto = new HiloDTO(UsuarioMapper.toDTO(uservo.get()), Titulo, Fecha);
@@ -86,7 +85,7 @@ public class HiloRestController {
 
     @Transactional
     @RequestMapping(value = "/hilo/mensaje", method = POST)
-    public ResponseEntity<MensajeDTO> enviarMensaje(@RequestParam int Id_Creador, @RequestParam Date Fecha, @RequestParam int Id_Hilo, @RequestBody String mensaje) {
+    public ResponseEntity<MensajeDTO> enviarMensaje(@RequestParam int Id_Creador, @RequestParam String Fecha, @RequestParam int Id_Hilo, @RequestBody String mensaje) {
         Optional<UsuarioVO> uservo = userService.ConsultarPerfilUsuario(Id_Creador);
         Optional<HiloVO> hilovo = hiloService.Consultar_hilo(Id_Hilo);
         if (uservo != null || hilovo != null) {

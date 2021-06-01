@@ -5,7 +5,6 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -49,7 +48,7 @@ public class ProductoVO extends AuditableEntity implements Serializable {
      * fecha tipo Date
      */
     @Column(length = 500)
-    private Date Fecha_creacion;
+    private String Fecha_creacion;
 
     @OneToMany(mappedBy = "producto", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<FavoritosVO> lista_usuarios_deseados;
@@ -63,7 +62,7 @@ public class ProductoVO extends AuditableEntity implements Serializable {
     @Column(length = 500)
     private String descripcion;
 
-    public ProductoVO(String nombre, String precio, int stock_disponible, Date fecha_creacion, String descripcion) {
+    public ProductoVO(String nombre, String precio, int stock_disponible, String fecha_creacion, String descripcion) {
         Nombre = nombre;
         Precio = precio;
         Stock_disponible = stock_disponible;

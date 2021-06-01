@@ -4,7 +4,6 @@ import com.tdi.tienda_del_infinito.Usuario.Dominio.DTO.UsuarioDTO;
 import lombok.*;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -35,16 +34,16 @@ public class HiloDTO {
     /**
      * fecha_creacion tipo Date
      */
-    private Date Fecha_creacion;
+    private String Fecha_creacion;
 
     /**
      * lista_mensajes tipo List
      */
     private List<MensajeDTO> lista_mensajes = new ArrayList<>();
 
-    public HiloDTO(UsuarioDTO creador, String titulo, Date fecha_creacion) {
+    public HiloDTO(UsuarioDTO creador, String titulo, String fecha_creacion) {
         this.creador = creador;
         this.titulo = titulo;
-        Fecha_creacion = fecha_creacion;
+        this.Fecha_creacion = fecha_creacion;
     }
 }

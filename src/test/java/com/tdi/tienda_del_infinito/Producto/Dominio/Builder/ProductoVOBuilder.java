@@ -6,8 +6,6 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.With;
 
-import java.util.Date;
-
 @AllArgsConstructor
 @NoArgsConstructor
 @With
@@ -15,7 +13,7 @@ public class ProductoVOBuilder {
     private String Nombre;
     private String Precio;
     private int Stock_disponible;
-    private Date Fecha_creacion;
+    private String Fecha_creacion;
     private String descripcion;
 
     public ProductoVO build() {

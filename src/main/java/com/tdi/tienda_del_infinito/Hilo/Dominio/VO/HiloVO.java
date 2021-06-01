@@ -7,7 +7,6 @@ import lombok.*;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -47,8 +46,7 @@ public class HiloVO extends AuditableEntity implements Serializable {
      * fecha_creacion tipo Date
      */
     @Column
-    @Temporal(value = TemporalType.DATE)
-    private Date fecha_creacion;
+    private String fecha_creacion;
 
 
     /**
@@ -57,7 +55,7 @@ public class HiloVO extends AuditableEntity implements Serializable {
     @OneToMany(mappedBy = "hilo", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<MensajeVO> lista_mensajes = new ArrayList<>();
 
-    public HiloVO(String titulo, Date fecha_creacion) {
+    public HiloVO(String titulo, String fecha_creacion) {
         this.titulo = titulo;
         this.fecha_creacion = fecha_creacion;
     }

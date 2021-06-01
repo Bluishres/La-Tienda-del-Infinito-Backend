@@ -32,8 +32,9 @@ public class UsuarioInfraUnitTestCase extends UnitTestCase {
         //Arrange
         UsuarioVO user = createAndSaveNewUser();
 
-        //Assert
+        //Act
         UsuarioVO userBd = em.find(UsuarioVO.class, user.getId());
+        //Assert
         Assert.assertEquals(user, userBd);
     }
 

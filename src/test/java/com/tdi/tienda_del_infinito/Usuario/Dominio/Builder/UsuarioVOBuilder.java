@@ -6,7 +6,6 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.With;
 
-import java.util.Date;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -18,7 +17,7 @@ public class UsuarioVOBuilder {
     private String Nombre;
     private String Apellidos;
     private String Nacionalidad;
-    private Date Fecha_Nacimiento;
+    private String Fecha_Nacimiento;
     private String Direccion;
     private boolean isAdmin;
     private String Foto_Perfil;

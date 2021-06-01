@@ -3,7 +3,6 @@ package com.tdi.tienda_del_infinito.Producto.Dominio.DTO;
 import lombok.*;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -40,7 +39,7 @@ public class ProductoDTO {
     /**
      * fecha tipo Date
      */
-    private Date Fecha_creacion;
+    private String Fecha_creacion;
 
     /**
      * lista_usuarios_deseados tipo List

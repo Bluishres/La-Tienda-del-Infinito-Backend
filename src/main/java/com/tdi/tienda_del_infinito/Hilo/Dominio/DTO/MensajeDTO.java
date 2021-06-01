@@ -3,7 +3,6 @@ package com.tdi.tienda_del_infinito.Hilo.Dominio.DTO;
 import com.tdi.tienda_del_infinito.Usuario.Dominio.DTO.UsuarioDTO;
 import lombok.*;
 
-import java.util.Date;
 
 /**
  * Clase MensajeDTO
@@ -30,7 +29,7 @@ public class MensajeDTO {
     /**
      * fecha_creacion tipo Date
      */
-    private Date Fecha_creacion;
+    private String Fecha_creacion;
 
     /**
      * hilo tipo HiloVO
@@ -42,9 +41,9 @@ public class MensajeDTO {
      */
     private String mensaje;
 
-    public MensajeDTO(UsuarioDTO autor, Date fecha_creacion, HiloDTO hilo, String mensaje) {
+    public MensajeDTO(UsuarioDTO autor, String fecha_creacion, HiloDTO hilo, String mensaje) {
         this.autor = autor;
-        Fecha_creacion = fecha_creacion;
+        this.Fecha_creacion = fecha_creacion;
         this.hilo = hilo;
         this.mensaje = mensaje;
     }

@@ -2,21 +2,13 @@ package com.tdi.tienda_del_infinito.Usuario.Dominio.DTO;
 
 import com.tdi.tienda_del_infinito.Hilo.Dominio.DTO.HiloDTO;
 import com.tdi.tienda_del_infinito.Hilo.Dominio.DTO.MensajeDTO;
-import com.tdi.tienda_del_infinito.Hilo.Dominio.VO.HiloVO;
-import com.tdi.tienda_del_infinito.Hilo.Dominio.VO.MensajeVO;
 import com.tdi.tienda_del_infinito.Producto.Dominio.DTO.FavoritosDTO;
 import com.tdi.tienda_del_infinito.Producto.Dominio.DTO.TicketDTO;
-import com.tdi.tienda_del_infinito.Producto.Dominio.VO.FavoritosVO;
-import com.tdi.tienda_del_infinito.Producto.Dominio.VO.TicketVO;
 import com.tdi.tienda_del_infinito.Shared.Aplicacion.Dto;
 import lombok.*;
 
-import javax.persistence.CascadeType;
-import javax.persistence.FetchType;
-import javax.persistence.OneToMany;
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -65,9 +57,9 @@ public class UsuarioDTO implements Dto, Serializable {
     private String Nacionalidad;
 
     /**
-     * fecha_nacimiento tipo Date
+     * fecha_nacimiento tipo String
      */
-    private Date Fecha_Nacimiento;
+    private String Fecha_Nacimiento;
 
     /**
      * direccion tipo String

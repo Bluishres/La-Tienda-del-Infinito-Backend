@@ -4,7 +4,6 @@ import com.tdi.tienda_del_infinito.Usuario.Dominio.VO.UsuarioVO;
 import lombok.*;
 
 import javax.persistence.*;
-import java.util.Date;
 
 /**
  * Clase MensajeVO para trabajar con la base de datos
@@ -37,8 +36,7 @@ public class MensajeVO {
      * fecha_creacion tipo Date
      */
     @Column
-    @Temporal(value = TemporalType.DATE)
-    private Date fecha_creacion;
+    private String fecha_creacion;
 
     /**
      * fecha_creacion tipo Date
@@ -53,7 +51,7 @@ public class MensajeVO {
     @JoinColumn(name = "hilo_id")
     private HiloVO hilo;
 
-    public MensajeVO(Date fecha_creacion, String mensaje) {
+    public MensajeVO(String fecha_creacion, String mensaje) {
         this.fecha_creacion = fecha_creacion;
         this.mensaje = mensaje;
     }

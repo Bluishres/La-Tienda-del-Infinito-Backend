@@ -6,14 +6,12 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.With;
 
-import java.util.Date;
-
 @AllArgsConstructor
 @NoArgsConstructor
 @With
 public class HiloVOBuilder {
     private String titulo;
-    private Date Fecha_creacion;
+    private String Fecha_creacion;
 
     public HiloVO build() {
         ObjectMother om = ObjectMother.getInstance();

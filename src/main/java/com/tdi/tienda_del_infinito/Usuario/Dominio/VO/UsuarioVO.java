@@ -46,7 +46,7 @@ public class UsuarioVO extends AuditableEntity implements Serializable {
     /**
      * email tipo String
      */
-    @Column(length = 50, nullable = false)
+    @Column(unique = true,length = 50, nullable = false)
     private String Email;
 
     /**

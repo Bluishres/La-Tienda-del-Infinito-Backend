@@ -16,9 +16,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
 import java.util.List;
@@ -52,7 +50,7 @@ public class TiendaRestController {
      * @return
      */
     @RequestMapping(value = "/buy", method = POST)
-    public ResponseEntity<TicketDTO> comprar(@RequestParam Date Fecha, @RequestParam Double Importe, @RequestParam int Unidades, @RequestParam int Id_Usuario, @RequestParam int Id_Producto) {
+    public ResponseEntity<TicketDTO> comprar(@RequestParam String Fecha, @RequestParam Double Importe, @RequestParam int Unidades, @RequestParam int Id_Usuario, @RequestParam int Id_Producto) {
         Optional<UsuarioVO> uservo = userService.ConsultarPerfilUsuario(Id_Usuario);
         Optional<ProductoVO> productvo = productService.ConsultarProducto(Id_Producto);
         if (uservo != null || productvo != null) {
@@ -70,9 +68,22 @@ public class TiendaRestController {
     }
 
 
-    @RequestMapping(value = "/buy/user", method = GET)
+    @RequestMapping(value = "/buy/{user}", method = GET)
     public ResponseEntity<List<TicketDTO>> ticketsAllbyuser(@RequestParam int Id_Usuario) {
         return ResponseEntity.ok(tiendaService.Consultar_ticketsbyUser(Id_Usuario));
+    }
+
+    /**
+     * Método que elimina un ticket el cual se obtiene por su id
+     *
+     * @param id
+     * @return
+     */
+    @DeleteMapping(EndpointUrls.DeleteById)
+    public ResponseEntity<Boolean> delete(@PathVariable final int id) {
+        return tiendaService.Eliminar_Ticket(id)
+                ? ResponseEntity.ok(true)
+                : new ResponseEntity<>(false, HttpStatus.NOT_FOUND);
     }
 
     /**
@@ -99,7 +110,7 @@ public class TiendaRestController {
         return ResponseEntity.ok(tiendaService.Consultar_favoritos());
     }
 
-    @RequestMapping(value = "/fav/user", method = GET)
+    @RequestMapping(value = "/fav/{user}", method = GET)
     public ResponseEntity<List<FavoritosDTO>> favoritosAllbyuser(@RequestParam Integer Id_Usuario) {
         return ResponseEntity.ok(tiendaService.Consultar_favoritosbyUser(Id_Usuario));
     }

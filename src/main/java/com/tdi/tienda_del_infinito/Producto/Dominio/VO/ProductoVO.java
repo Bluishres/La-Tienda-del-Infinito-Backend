@@ -39,6 +39,12 @@ public class ProductoVO extends AuditableEntity implements Serializable {
     private String Precio;
 
     /**
+     * Imagen tipo String
+     */
+    @Column
+    private String Imagen;
+
+    /**
      * stock tipo Integer
      */
     @Column(length = 500)
@@ -50,11 +56,11 @@ public class ProductoVO extends AuditableEntity implements Serializable {
     @Column(length = 500)
     private String Fecha_creacion;
 
-    @OneToMany(mappedBy = "producto", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+/*    @OneToMany(mappedBy = "producto", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<FavoritosVO> lista_usuarios_deseados;
 
     @OneToMany(mappedBy = "producto", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
-    private List<TicketVO> tickets;
+    private List<TicketVO> tickets;*/
 
     /**
      * descripcion tipo String
@@ -62,11 +68,12 @@ public class ProductoVO extends AuditableEntity implements Serializable {
     @Column(length = 500)
     private String descripcion;
 
-    public ProductoVO(String nombre, String precio, int stock_disponible, String fecha_creacion, String descripcion) {
+    public ProductoVO(String nombre, String precio, int stock_disponible, String fecha_creacion, String descripcion, String imagen) {
         Nombre = nombre;
         Precio = precio;
         Stock_disponible = stock_disponible;
         Fecha_creacion = fecha_creacion;
         this.descripcion = descripcion;
+        Imagen = imagen;
     }
 }

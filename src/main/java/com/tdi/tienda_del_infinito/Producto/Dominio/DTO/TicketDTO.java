@@ -3,7 +3,6 @@ package com.tdi.tienda_del_infinito.Producto.Dominio.DTO;
 import com.tdi.tienda_del_infinito.Usuario.Dominio.DTO.UsuarioDTO;
 import lombok.*;
 
-import java.util.Date;
 
 /**
  * Clase TicketDTO
@@ -21,9 +20,9 @@ public class TicketDTO {
     private int Id;
 
     /**
-     * fecha tipo Date
+     * fecha tipo String
      */
-    private Date Fecha;
+    private String Fecha;
 
     /**
      * importe tipo Double
@@ -46,7 +45,7 @@ public class TicketDTO {
      */
     private ProductoDTO Producto;
 
-    public TicketDTO(Date fecha, Double importe, int unidades, UsuarioDTO usuario, ProductoDTO producto) {
+    public TicketDTO(String fecha, Double importe, int unidades, UsuarioDTO usuario, ProductoDTO producto) {
         Fecha = fecha;
         Importe = importe;
         Unidades = unidades;

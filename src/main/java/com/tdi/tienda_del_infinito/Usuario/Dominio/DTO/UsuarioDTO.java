@@ -76,12 +76,12 @@ public class UsuarioDTO implements Dto, Serializable {
      */
     private String Foto_Perfil;
 
-    private List<HiloDTO> hilos = new ArrayList<>();
+/*    private List<HiloDTO> hilos = new ArrayList<>();
 
     private List<MensajeDTO> mensajes = new ArrayList<>();
 
     private List<FavoritosDTO> lista_deseados = new ArrayList<>();
 
-    private List<TicketDTO> tickets = new ArrayList<>();
+    private List<TicketDTO> tickets = new ArrayList<>();*/
 
 }

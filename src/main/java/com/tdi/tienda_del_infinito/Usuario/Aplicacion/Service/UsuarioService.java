@@ -75,6 +75,36 @@ public class UsuarioService {
     }
 
     /**
+     * Método para consultar un usuario en función al email que se le pase
+     *
+     * @param email
+     * @return usuarioRepo.findOne(email)
+     */
+    @Transactional
+    public Optional<UsuarioVO> ConsultarPerfilUsuarioByEmail(String email) {
+        Optional<UsuarioVO> nbd = usuarioRepo.findByEmail(email);
+        if (!nbd.isPresent()) {
+            throw new EntityNotExist(UsuarioVO.class.toString(), email);
+        }
+        return nbd;
+    }
+
+    /**
+     * Método para consultar un usuario en función al nick que se le pase
+     *
+     * @param nick
+     * @return usuarioRepo.findOne(email)
+     */
+    @Transactional
+    public Optional<UsuarioVO> ConsultarPerfilUsuarioByNick(String nick) {
+        Optional<UsuarioVO> nbd = usuarioRepo.findByNick(nick);
+        if (!nbd.isPresent()) {
+            throw new EntityNotExist(UsuarioVO.class.toString(), nick);
+        }
+        return nbd;
+    }
+
+    /**
      * Método para modificar un usuario en función a la id que se le pase. Si no existe se genera una excepción. Tambien se convierte un UsuarioDTO a UsuarioVO
      *
      * @param usuariodto

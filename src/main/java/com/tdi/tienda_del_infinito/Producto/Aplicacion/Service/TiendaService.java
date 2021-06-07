@@ -60,6 +60,21 @@ public class TiendaService {
         return nbdA;
     }
 
+    /**
+     * Método para eliminar un ticket
+     *
+     * @param id
+     */
+    @Transactional
+    public boolean Eliminar_Ticket(int id) {
+        Optional<TicketVO> nbd = ticketRepo.findById(id);
+        if (!nbd.isPresent()) {
+            throw new EntityNotExist(TicketVO.class.toString(), id);
+        }
+        ticketRepo.deleteById(id);
+        return true;
+    }
+
     @Transactional
     public ArrayList<TicketDTO> Consultar_ticketsbyUser(Integer user) {
         ArrayList<TicketDTO> nbdA = new ArrayList<>();

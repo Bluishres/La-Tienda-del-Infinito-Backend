@@ -35,7 +35,7 @@ public class UsuarioVO extends AuditableEntity implements Serializable {
      * nombre tipo String
      */
     @Column(unique = true, nullable = false)
-    private String Nick;
+    private String nick;
 
     /**
      * password tipo String
@@ -47,7 +47,7 @@ public class UsuarioVO extends AuditableEntity implements Serializable {
      * email tipo String
      */
     @Column(unique = true,length = 50, nullable = false)
-    private String Email;
+    private String email;
 
     /**
      * nombre tipo String
@@ -88,10 +88,10 @@ public class UsuarioVO extends AuditableEntity implements Serializable {
     /**
      * foto_perfil tipo String
      */
-    @Column(length = 150, nullable = false)
+    @Column
     private String Foto_Perfil;
 
-    @OneToMany(mappedBy = "creador", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+/*    @OneToMany(mappedBy = "creador", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<HiloVO> hilos = new ArrayList<>();
 
     @OneToMany(mappedBy = "autor", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
@@ -101,12 +101,12 @@ public class UsuarioVO extends AuditableEntity implements Serializable {
     private List<FavoritosVO> lista_deseados = new ArrayList<>();
 
     @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
-    private List<TicketVO> tickets = new ArrayList<>();
+    private List<TicketVO> tickets = new ArrayList<>();*/
 
     public UsuarioVO(String nick, String password, String email, String nombre, String apellidos, String nacionalidad, String fecha_Nacimiento, String direccion, boolean isAdmin, String foto_Perfil) {
-        Nick = nick;
+        this.nick = nick;
         Password = password;
-        Email = email;
+        this.email = email;
         Nombre = nombre;
         Apellidos = apellidos;
         Nacionalidad = nacionalidad;

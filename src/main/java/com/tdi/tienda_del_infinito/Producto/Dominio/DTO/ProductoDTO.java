@@ -2,6 +2,7 @@ package com.tdi.tienda_del_infinito.Producto.Dominio.DTO;
 
 import lombok.*;
 
+import javax.persistence.Column;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,6 +33,11 @@ public class ProductoDTO {
     private String Precio;
 
     /**
+     * Imagen tipo String
+     */
+    private String Imagen;
+
+    /**
      * stock tipo Integer
      */
     private int Stock_disponible;
@@ -41,15 +47,15 @@ public class ProductoDTO {
      */
     private String Fecha_creacion;
 
-    /**
+/*    *//**
      * lista_usuarios_deseados tipo List
-     */
+     *//*
     private List<FavoritosDTO> lista_usuarios_deseados = new ArrayList<>();
 
-    /**
+    *//**
      * lista_usuarios_deseados tipo List
-     */
-    private List<TicketDTO> tickets = new ArrayList<>();
+     *//*
+    private List<TicketDTO> tickets = new ArrayList<>();*/
 
     /**
      * descripcion tipo String

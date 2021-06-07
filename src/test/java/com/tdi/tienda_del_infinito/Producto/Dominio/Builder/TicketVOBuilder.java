@@ -12,7 +12,7 @@ import java.util.Date;
 @NoArgsConstructor
 @With
 public class TicketVOBuilder {
-    private Date Fecha;
+    private String Fecha;
     private Double Importe;
     private int Unidades;
 
@@ -21,7 +21,7 @@ public class TicketVOBuilder {
         TicketVO mother = om.bear("TicketVO", TicketVO.class);
 
         return new TicketVO(
-                Fecha != null ? Fecha : mother.getFecha(),
+                Fecha != null ? Fecha : mother.getFecha().toString(),
                 Importe != null ? Importe : mother.getImporte(),
                 Unidades != 0 ? Unidades : mother.getUnidades()
         );

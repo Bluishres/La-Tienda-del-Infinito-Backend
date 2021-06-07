@@ -6,7 +6,6 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Date;
 
 /**
  * Clase TicketVO para trabajar con la base de datos
@@ -28,10 +27,10 @@ public class TicketVO extends AuditableEntity implements Serializable {
     private int Id;
 
     /**
-     * fecha tipo Date
+     * fecha tipo String
      */
     @Column(length = 500)
-    private Date Fecha;
+    private String Fecha;
 
     /**
      * importe tipo Double
@@ -60,7 +59,7 @@ public class TicketVO extends AuditableEntity implements Serializable {
     @JoinColumn(name = "producto_id")
     private ProductoVO producto;
 
-    public TicketVO(Date fecha, Double importe, int unidades) {
+    public TicketVO(String fecha, Double importe, int unidades) {
         Fecha = fecha;
         Importe = importe;
         Unidades = unidades;

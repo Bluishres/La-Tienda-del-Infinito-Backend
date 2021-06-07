@@ -21,7 +21,8 @@ public class ProductoMapper {
                 .withFecha_creacion(vo.getFecha_creacion())
                 .withPrecio(vo.getPrecio())
                 .withStock_disponible(vo.getStock_disponible())
-                .withDescripcion(vo.getDescripcion());
+                .withDescripcion(vo.getDescripcion())
+                .withImagen(vo.getImagen());
     }
 
     /**
@@ -37,6 +38,7 @@ public class ProductoMapper {
                 .withFecha_creacion(dto.getFecha_creacion())
                 .withPrecio(dto.getPrecio())
                 .withStock_disponible(dto.getStock_disponible())
-                .withDescripcion(dto.getDescripcion());
+                .withDescripcion(dto.getDescripcion())
+                .withImagen(dto.getImagen());
     }
 }

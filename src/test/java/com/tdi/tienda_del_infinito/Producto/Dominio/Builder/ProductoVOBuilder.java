@@ -15,6 +15,7 @@ public class ProductoVOBuilder {
     private int Stock_disponible;
     private String Fecha_creacion;
     private String descripcion;
+    private String imagen;
 
     public ProductoVO build() {
         ObjectMother om = ObjectMother.getInstance();
@@ -25,7 +26,8 @@ public class ProductoVOBuilder {
                 Precio != null ? Precio : mother.getPrecio(),
                 Stock_disponible != 0 ? Stock_disponible : mother.getStock_disponible(),
                 Fecha_creacion != null ? Fecha_creacion : mother.getFecha_creacion(),
-                descripcion != null ? descripcion : mother.getDescripcion()
+                descripcion != null ? descripcion : mother.getDescripcion(),
+                imagen = "https://i.blogs.es/8e8f64/lo-de-que-comprar-una-casa-es-la-mejor-inversion-hay-generaciones-que-ya-no-lo-ven-ni-de-lejos---1/450_1000.jpg"
         );
 
 

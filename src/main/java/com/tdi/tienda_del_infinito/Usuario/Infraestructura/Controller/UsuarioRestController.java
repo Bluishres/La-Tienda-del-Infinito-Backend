@@ -65,6 +65,42 @@ public class UsuarioRestController {
     }
 
     /**
+     * Método que obtiene un usuario por su nick
+     *
+     * @param nick
+     * @return
+     */
+    @GetMapping(EndpointUrls.GetByNick)
+    public ResponseEntity getByNick(@PathVariable final String nick) {
+        try {
+            return userService.ConsultarPerfilUsuarioByNick(nick)
+                    .map(user -> UsuarioMapper.toDTO(user))
+                    .map(userdto -> new ResponseEntity(userdto, HttpStatus.OK))
+                    .orElse(new ResponseEntity(null, HttpStatus.NOT_FOUND));
+        } catch (Exception e) {
+            return new ResponseEntity(null, HttpStatus.NOT_FOUND);
+        }
+    }
+
+    /**
+     * Método que obtiene un usuario por su email
+     *
+     * @param email
+     * @return
+     */
+    @GetMapping(EndpointUrls.GetByEmail)
+    public ResponseEntity getByEmail(@PathVariable final String email) {
+        try {
+            return userService.ConsultarPerfilUsuarioByEmail(email)
+                    .map(user -> UsuarioMapper.toDTO(user))
+                    .map(userdto -> new ResponseEntity(userdto, HttpStatus.OK))
+                    .orElse(new ResponseEntity(null, HttpStatus.NOT_FOUND));
+        } catch (Exception e) {
+            return new ResponseEntity(null, HttpStatus.NOT_FOUND);
+        }
+    }
+
+    /**
      * Método que actualiza los datos de un usuario
      *
      * @param usuarioDTO

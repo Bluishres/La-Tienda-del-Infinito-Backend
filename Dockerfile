@@ -4,7 +4,7 @@
 FROM maven:3.6.0-jdk-8-slim AS build
 COPY src /home/latiendadelinfinito/src
 COPY pom.xml /home/latiendadelinfinito
-RUN mvn -f /home/latiendadelinfinito/pom.xml clean package
+RUN mvn -f /home/latiendadelinfinito/pom.xml clean package -Dmaven.test.skip=true
 
 #
 # Package stage

@@ -31,7 +31,7 @@ public class UsuarioRestController {
      * @return
      */
     @PostMapping
-    public ResponseEntity<UsuarioDTO> register(@RequestBody UsuarioDTO dto) {
+    public ResponseEntity<UsuarioDTO> registrar(@RequestBody UsuarioDTO dto) {
         dto = UsuarioMapper.toDTO(userService.Registro_De_Usuario(dto));
         return new ResponseEntity<>(dto, HttpStatus.OK);
     }

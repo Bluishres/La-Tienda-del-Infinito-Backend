@@ -12,7 +12,7 @@
             <property name="javax.persistence.jdbc.user" value="root"/>
             <property name="javax.persistence.jdbc.password" value="root"/>
             <property name="javax.persistence.jdbc.url"
-                      value="jdbc:mysql://localhost:3311/tiendadinfinito?useUnicode=true&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC"/>
+                      value="jdbc:mysql://host.docker.internal:3311/tiendadinfinito?useUnicode=true&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC"/>
             <property name="javax.persistence.schema-generation.database.action"
                       value="update"/>
         </properties>

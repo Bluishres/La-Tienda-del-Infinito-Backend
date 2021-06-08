@@ -1,0 +1,7 @@
+server:
+  port: 8080 #Asignamos el puerto del servidor
+spring:
+  application:
+    name: LaTiendaDelInfinito #Nombre de la aplicación
+#  main:
+#    allow-bean-definition-overriding: true

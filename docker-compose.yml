@@ -24,10 +24,10 @@ services:
   backendtdi:
     image: bluishres/latiendadelinfinitoback:latest
     container_name: BackendInfinity
-    # comentar network_mode y extra_hosts si es para docker en windows.
-    network_mode: host
-    extra_hosts:
-      - "host.docker.internal:127.0.0.1"
+    # descomentar network_mode y extra_hosts si es para docker en ubuntu.
+#    network_mode: host
+#    extra_hosts:
+#      - "host.docker.internal:127.0.0.1"
     restart: always
     expose:
       - 8080

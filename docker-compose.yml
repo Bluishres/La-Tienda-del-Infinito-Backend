@@ -1,4 +1,10 @@
 version: "3.8"
+networks:
+  mired2:
+    ipam:
+      config:
+        - subnet: 182.28.0.0/16
+          gateway: 182.28.0.1
 services:
   mysqldb:
     image: mysql:5.7
@@ -21,4 +27,11 @@ services:
       - 3306
     volumes:
       - ./res/db/mysql/db:/var/lib/mysql
+  backendtdi:
+    image: bluishres/latiendadelinfinitoback:5
+    container_name: Backend
+    expose:
+      - 8080
+    ports:
+      - 8080:8080
 

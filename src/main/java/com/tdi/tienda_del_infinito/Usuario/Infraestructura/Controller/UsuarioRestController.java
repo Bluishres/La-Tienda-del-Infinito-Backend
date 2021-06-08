@@ -118,7 +118,7 @@ public class UsuarioRestController {
      * @return
      */
     @DeleteMapping(EndpointUrls.DeleteById)
-    public ResponseEntity<Boolean> delete(@PathVariable final int id) {
+    public ResponseEntity<Boolean> eliminar(@PathVariable final int id) {
         return userService.Eliminar_Usuario(id)
                 ? ResponseEntity.ok(true)
                 : new ResponseEntity<>(false, HttpStatus.NOT_FOUND);

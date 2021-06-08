@@ -39,7 +39,7 @@ public class HiloDTO {
     /**
      * lista_mensajes tipo List
      */
-    private List<MensajeDTO> lista_mensajes = new ArrayList<>();
+//    private List<MensajeDTO> lista_mensajes = new ArrayList<>();
 
     public HiloDTO(UsuarioDTO creador, String titulo, String fecha_creacion) {
         this.creador = creador;

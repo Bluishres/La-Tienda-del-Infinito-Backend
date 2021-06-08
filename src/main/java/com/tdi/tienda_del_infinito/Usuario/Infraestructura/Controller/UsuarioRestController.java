@@ -31,7 +31,7 @@ public class UsuarioRestController {
      * @return
      */
     @PostMapping
-    public ResponseEntity<UsuarioDTO> registrar(@RequestBody UsuarioDTO dto) {
+    public ResponseEntity<UsuarioDTO> register(@RequestBody UsuarioDTO dto) {
         dto = UsuarioMapper.toDTO(userService.Registro_De_Usuario(dto));
         return new ResponseEntity<>(dto, HttpStatus.OK);
     }
@@ -118,7 +118,7 @@ public class UsuarioRestController {
      * @return
      */
     @DeleteMapping(EndpointUrls.DeleteById)
-    public ResponseEntity<Boolean> eliminar(@PathVariable final int id) {
+    public ResponseEntity<Boolean> delete(@PathVariable final int id) {
         return userService.Eliminar_Usuario(id)
                 ? ResponseEntity.ok(true)
                 : new ResponseEntity<>(false, HttpStatus.NOT_FOUND);

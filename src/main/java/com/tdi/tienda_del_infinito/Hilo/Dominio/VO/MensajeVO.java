@@ -31,7 +31,6 @@ public class MensajeVO {
     @JoinColumn(name = "usuario_id")
     private UsuarioVO autor;
 
-
     /**
      * fecha_creacion tipo Date
      */

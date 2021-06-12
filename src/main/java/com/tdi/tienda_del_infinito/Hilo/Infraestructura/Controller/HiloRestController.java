@@ -76,7 +76,7 @@ public class HiloRestController {
         }
     }
 
-    @DeleteMapping(value = "/hilo")
+    @DeleteMapping(value = "/hilo/{id}")
     public ResponseEntity<Boolean> deleteHilo(@PathVariable final int id) {
         return hiloService.Eliminar_hilo(id)
                 ? ResponseEntity.ok(true)

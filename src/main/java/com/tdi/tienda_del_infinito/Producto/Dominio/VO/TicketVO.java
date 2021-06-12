@@ -3,6 +3,8 @@ package com.tdi.tienda_del_infinito.Producto.Dominio.VO;
 import com.tdi.tienda_del_infinito.Shared.Dominio.Audit.AuditableEntity;
 import com.tdi.tienda_del_infinito.Usuario.Dominio.VO.UsuarioVO;
 import lombok.*;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
 import java.io.Serializable;

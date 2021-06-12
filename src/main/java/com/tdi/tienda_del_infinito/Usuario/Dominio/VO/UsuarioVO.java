@@ -1,5 +1,6 @@
 package com.tdi.tienda_del_infinito.Usuario.Dominio.VO;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.tdi.tienda_del_infinito.Hilo.Dominio.VO.HiloVO;
 import com.tdi.tienda_del_infinito.Hilo.Dominio.VO.MensajeVO;
 import com.tdi.tienda_del_infinito.Producto.Dominio.VO.FavoritosVO;
@@ -91,17 +92,21 @@ public class UsuarioVO extends AuditableEntity implements Serializable {
     @Column
     private String Foto_Perfil;
 
-/*    @OneToMany(mappedBy = "creador", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    @JsonIgnore
+    @OneToMany(mappedBy = "creador", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<HiloVO> hilos = new ArrayList<>();
 
+    @JsonIgnore
     @OneToMany(mappedBy = "autor", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<MensajeVO> mensajes = new ArrayList<>();
 
+    @JsonIgnore
     @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<FavoritosVO> lista_deseados = new ArrayList<>();
 
+    @JsonIgnore
     @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
-    private List<TicketVO> tickets = new ArrayList<>();*/
+    private List<TicketVO> tickets = new ArrayList<>();
 
     public UsuarioVO(String nick, String password, String email, String nombre, String apellidos, String nacionalidad, String fecha_Nacimiento, String direccion, boolean isAdmin, String foto_Perfil) {
         this.nick = nick;

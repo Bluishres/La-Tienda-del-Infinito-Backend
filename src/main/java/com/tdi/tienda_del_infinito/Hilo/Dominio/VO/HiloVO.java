@@ -1,5 +1,6 @@
 package com.tdi.tienda_del_infinito.Hilo.Dominio.VO;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.tdi.tienda_del_infinito.Shared.Dominio.Audit.AuditableEntity;
 import com.tdi.tienda_del_infinito.Usuario.Dominio.VO.UsuarioVO;
 import lombok.*;
@@ -51,9 +52,10 @@ public class HiloVO extends AuditableEntity implements Serializable {
 
 /*    *//**
      * lista_mensajes tipo List
-     *//*
+     */
+    @JsonIgnore
     @OneToMany(mappedBy = "hilo", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
-    private List<MensajeVO> lista_mensajes = new ArrayList<>();*/
+    private List<MensajeVO> lista_mensajes = new ArrayList<>();
 
     public HiloVO(String titulo, String fecha_creacion) {
         this.titulo = titulo;

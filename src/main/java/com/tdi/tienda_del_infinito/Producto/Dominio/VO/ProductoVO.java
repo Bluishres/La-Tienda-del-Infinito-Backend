@@ -1,5 +1,6 @@
 package com.tdi.tienda_del_infinito.Producto.Dominio.VO;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.tdi.tienda_del_infinito.Shared.Dominio.Audit.AuditableEntity;
 import lombok.*;
 
@@ -56,11 +57,13 @@ public class ProductoVO extends AuditableEntity implements Serializable {
     @Column(length = 500)
     private String Fecha_creacion;
 
-/*    @OneToMany(mappedBy = "producto", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    @JsonIgnore
+    @OneToMany(mappedBy = "producto", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<FavoritosVO> lista_usuarios_deseados;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "producto", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
-    private List<TicketVO> tickets;*/
+    private List<TicketVO> tickets;
 
     /**
      * descripcion tipo String

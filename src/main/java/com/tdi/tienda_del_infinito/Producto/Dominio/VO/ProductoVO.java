@@ -7,6 +7,7 @@ import lombok.*;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Clase ProductoVO para trabajar con la base de datos
@@ -15,8 +16,8 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @Setter
-@With
 @EqualsAndHashCode
+@With
 @Entity(name = "producto")
 public class ProductoVO extends AuditableEntity implements Serializable {
 
@@ -58,11 +59,11 @@ public class ProductoVO extends AuditableEntity implements Serializable {
     private String Fecha_creacion;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "producto", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "producto", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<FavoritosVO> lista_usuarios_deseados;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "producto", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "producto", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<TicketVO> tickets;
 
     /**
@@ -79,4 +80,5 @@ public class ProductoVO extends AuditableEntity implements Serializable {
         this.descripcion = descripcion;
         Imagen = imagen;
     }
+
 }

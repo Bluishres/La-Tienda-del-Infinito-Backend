@@ -103,7 +103,7 @@ public class HiloRestController {
     }
 
 
-    @DeleteMapping(value = "/hilo/mensaje")
+    @DeleteMapping(value = "/hilo/mensaje/{id}")
     public ResponseEntity<Boolean> deleteMensaje(@PathVariable final int id) {
         return hiloService.Eliminar_mensaje(id)
                 ? ResponseEntity.ok(true)

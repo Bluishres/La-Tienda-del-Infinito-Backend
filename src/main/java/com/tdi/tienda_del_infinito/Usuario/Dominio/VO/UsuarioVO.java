@@ -101,11 +101,11 @@ public class UsuarioVO extends AuditableEntity implements Serializable {
     private List<MensajeVO> mensajes = new ArrayList<>();
 
     @JsonIgnore
-    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<FavoritosVO> lista_deseados = new ArrayList<>();
 
     @JsonIgnore
-    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<TicketVO> tickets = new ArrayList<>();
 
     public UsuarioVO(String nick, String password, String email, String nombre, String apellidos, String nacionalidad, String fecha_Nacimiento, String direccion, boolean isAdmin, String foto_Perfil) {

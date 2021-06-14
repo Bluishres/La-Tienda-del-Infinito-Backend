@@ -30,6 +30,7 @@ public class ProductoRestController {
      * @param dto
      * @return
      */
+    @CrossOrigin(origins = "*")
     @PostMapping
     public ResponseEntity<ProductoDTO> register(@RequestBody ProductoDTO dto) {
         dto = ProductoMapper.toDTO(productService.Registro_De_Producto(dto));
@@ -41,6 +42,7 @@ public class ProductoRestController {
      *
      * @return
      */
+    @CrossOrigin(origins = "*")
     @GetMapping(EndpointUrls.GetAll)
     public ResponseEntity<List<ProductoDTO>> getAll() {
         return ResponseEntity.ok(productService.Consultar_Productos());
@@ -52,6 +54,7 @@ public class ProductoRestController {
      * @param id
      * @return
      */
+    @CrossOrigin(origins = "*")
     @GetMapping(EndpointUrls.GetById)
     public ResponseEntity getById(@PathVariable final int id) {
         try {
@@ -70,6 +73,7 @@ public class ProductoRestController {
      * @param ProductoDTO
      * @return
      */
+    @CrossOrigin(origins = "*")
     @PutMapping(EndpointUrls.Update)
     public ResponseEntity<ProductoDTO> update(@RequestBody ProductoDTO ProductoDTO) {
         return new ResponseEntity(productService.Modificar_Producto(ProductoDTO), HttpStatus.CREATED);
@@ -81,6 +85,7 @@ public class ProductoRestController {
      * @param id
      * @return
      */
+    @CrossOrigin(origins = "*")
     @DeleteMapping(EndpointUrls.DeleteById)
     public ResponseEntity<Boolean> delete(@PathVariable final int id) {
         return productService.Eliminar_Producto(id)

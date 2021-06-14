@@ -30,6 +30,7 @@ public class UsuarioRestController {
      * @param dto
      * @return
      */
+    @CrossOrigin(origins = "*")
     @PostMapping
     public ResponseEntity<UsuarioDTO> register(@RequestBody UsuarioDTO dto) {
         dto = UsuarioMapper.toDTO(userService.Registro_De_Usuario(dto));
@@ -41,6 +42,7 @@ public class UsuarioRestController {
      *
      * @return
      */
+    @CrossOrigin(origins = "*")
     @GetMapping(EndpointUrls.GetAll)
     public ResponseEntity<List<UsuarioDTO>> getAll() {
         return ResponseEntity.ok(userService.Consultar_Usuarios());
@@ -52,6 +54,7 @@ public class UsuarioRestController {
      * @param id
      * @return
      */
+    @CrossOrigin(origins = "*")
     @GetMapping(EndpointUrls.GetById)
     public ResponseEntity getById(@PathVariable final int id) {
         try {
@@ -70,6 +73,7 @@ public class UsuarioRestController {
      * @param nick
      * @return
      */
+    @CrossOrigin(origins = "*")
     @GetMapping(EndpointUrls.GetByNick)
     public ResponseEntity getByNick(@PathVariable final String nick) {
         try {
@@ -88,6 +92,7 @@ public class UsuarioRestController {
      * @param email
      * @return
      */
+    @CrossOrigin(origins = "*")
     @GetMapping(EndpointUrls.GetByEmail)
     public ResponseEntity getByEmail(@PathVariable final String email) {
         try {
@@ -106,6 +111,7 @@ public class UsuarioRestController {
      * @param usuarioDTO
      * @return
      */
+    @CrossOrigin(origins = "*")
     @PutMapping(EndpointUrls.Update)
     public ResponseEntity<UsuarioDTO> update(@RequestBody UsuarioDTO usuarioDTO) {
         return new ResponseEntity(userService.Modificar_Usuario(usuarioDTO), HttpStatus.CREATED);
@@ -117,6 +123,7 @@ public class UsuarioRestController {
      * @param id
      * @return
      */
+    @CrossOrigin(origins = "*")
     @DeleteMapping(EndpointUrls.DeleteById)
     public ResponseEntity<Boolean> delete(@PathVariable final int id) {
         return userService.Eliminar_Usuario(id)

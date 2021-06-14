@@ -49,6 +49,7 @@ public class TiendaRestController {
      * @param Id_Producto
      * @return
      */
+    @CrossOrigin(origins = "*")
     @RequestMapping(value = "/buy", method = POST)
     public ResponseEntity<TicketDTO> comprar(@RequestParam String Fecha, @RequestParam Double Importe, @RequestParam int Unidades, @RequestParam int Id_Usuario, @RequestParam int Id_Producto) {
         Optional<UsuarioVO> uservo = userService.ConsultarPerfilUsuario(Id_Usuario);
@@ -61,13 +62,13 @@ public class TiendaRestController {
             return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
         }
     }
-
+    @CrossOrigin(origins = "*")
     @RequestMapping(value = "/buy", method = GET)
     public ResponseEntity<List<TicketDTO>> ticketsAll() {
         return ResponseEntity.ok(tiendaService.Consultar_tickets());
     }
 
-
+    @CrossOrigin(origins = "*")
     @RequestMapping(value = "/buy/{user}", method = GET)
     public ResponseEntity<List<TicketDTO>> ticketsAllbyuser(@RequestParam int Id_Usuario) {
         return ResponseEntity.ok(tiendaService.Consultar_ticketsbyUser(Id_Usuario));
@@ -79,6 +80,7 @@ public class TiendaRestController {
      * @param id
      * @return
      */
+    @CrossOrigin(origins = "*")
     @DeleteMapping(EndpointUrls.DeleteById)
     public ResponseEntity<Boolean> delete(@PathVariable final int id) {
         return tiendaService.Eliminar_Ticket(id)
@@ -91,6 +93,7 @@ public class TiendaRestController {
      * @param id_Producto
      * @return
      */
+    @CrossOrigin(origins = "*")
     @RequestMapping(value = "/fav", method = POST)
     public ResponseEntity<FavoritosDTO> favorito(@RequestParam int id_Usuario, @RequestParam int id_Producto) {
         Optional<UsuarioVO> uservo = userService.ConsultarPerfilUsuario(id_Usuario);
@@ -104,12 +107,12 @@ public class TiendaRestController {
         }
 
     }
-
+    @CrossOrigin(origins = "*")
     @RequestMapping(value = "/fav", method = GET)
     public ResponseEntity<List<FavoritosDTO>> favoritosAll() {
         return ResponseEntity.ok(tiendaService.Consultar_favoritos());
     }
-
+    @CrossOrigin(origins = "*")
     @RequestMapping(value = "/fav/{user}", method = GET)
     public ResponseEntity<List<FavoritosDTO>> favoritosAllbyuser(@RequestParam Integer Id_Usuario) {
         return ResponseEntity.ok(tiendaService.Consultar_favoritosbyUser(Id_Usuario));

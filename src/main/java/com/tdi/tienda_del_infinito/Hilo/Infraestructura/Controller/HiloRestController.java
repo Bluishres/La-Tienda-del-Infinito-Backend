@@ -40,6 +40,7 @@ public class HiloRestController {
     private final UsuarioService userService;
 
     @Transactional
+    @CrossOrigin(origins = "*")
     @RequestMapping(value = "/hilo", method = POST)
     public ResponseEntity<HiloDTO> crearHilo(@RequestParam int Id_Creador, @RequestParam String Titulo, @RequestParam String Fecha, @RequestBody String mensaje) {
         Optional<UsuarioVO> uservo = userService.ConsultarPerfilUsuario(Id_Creador);
@@ -59,13 +60,14 @@ public class HiloRestController {
             return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
         }
     }
-
+    @CrossOrigin(origins = "*")
     @RequestMapping(value = "/hilo", method = GET)
     public ResponseEntity<List<HiloDTO>> getAllhilos() {
         return ResponseEntity.ok(hiloService.Consultar_hilos());
     }
 
     @Transactional
+    @CrossOrigin(origins = "*")
     @RequestMapping(value = "/hilo/get", method = GET)
     public ResponseEntity<HiloDTO> getById(@RequestParam int id) {
         Optional<HiloVO> hilovo = hiloService.Consultar_hilo(id);
@@ -75,7 +77,7 @@ public class HiloRestController {
             return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
         }
     }
-
+    @CrossOrigin(origins = "*")
     @DeleteMapping(value = "/hilo/{id}")
     public ResponseEntity<Boolean> deleteHilo(@PathVariable final int id) {
         return hiloService.Eliminar_hilo(id)
@@ -84,6 +86,7 @@ public class HiloRestController {
     }
 
     @Transactional
+    @CrossOrigin(origins = "*")
     @RequestMapping(value = "/hilo/mensaje", method = POST)
     public ResponseEntity<MensajeDTO> enviarMensaje(@RequestParam int Id_Creador, @RequestParam String Fecha, @RequestParam int Id_Hilo, @RequestBody String mensaje) {
         Optional<UsuarioVO> uservo = userService.ConsultarPerfilUsuario(Id_Creador);
@@ -96,13 +99,13 @@ public class HiloRestController {
             return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
         }
     }
-
+    @CrossOrigin(origins = "*")
     @RequestMapping(value = "/hilo/mensajes", method = GET)
     public ResponseEntity<List<MensajeDTO>> getAllmensajesbyhilo(@RequestParam int Id_Hilo) {
         return ResponseEntity.ok(hiloService.getMensajesbyHilo(Id_Hilo));
     }
 
-
+    @CrossOrigin(origins = "*")
     @DeleteMapping(value = "/hilo/mensaje/{id}")
     public ResponseEntity<Boolean> deleteMensaje(@PathVariable final int id) {
         return hiloService.Eliminar_mensaje(id)
